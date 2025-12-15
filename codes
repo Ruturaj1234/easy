@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+int queue[10];
+int front = 0, rear = -1;
+
+// Add parcel
+void enqueue(int parcel) {
+    rear++;
+    queue[rear] = parcel;
+}
+
+// Process parcel
+void dequeue() {
+    cout << "Processed Parcel: P" << queue[front] << endl;
+    front++;
+}
+
+int main() {
+    // Enter parcels
+    enqueue(100);
+    enqueue(102);
+    enqueue(105);
+    enqueue(110);
+
+    cout << "Shipment Processing Order:\n";
+
+    while (front <= rear) {
+        dequeue();
+    }
+
+    return 0;
+}
